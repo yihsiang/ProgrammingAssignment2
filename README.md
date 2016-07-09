@@ -1,22 +1,22 @@
 ### Instructions to run
 1. Load the R script file. Replace ```<path>``` with the location where the R script is stored on your computer
-```
+...```
 ...source("~/<path>/cachematrix.R")
-```
+...```
 
 2. Create a cache of a simple 2x2 matrix
-```
+...```
 ...cache <- makeCacheMatrix(matrix(1:4,2,2))
-```
+...```
 
 3. Call cacheSolve to inverse the matrix for the first time
-```
+...```
 ...cacheSolve(cache)
 ...
 ...     [,1] [,2]
 ...[1,]   -2  1.5
 ...[2,]    1 -0.5
-```
+...```
 
 4. Call cacheSolve again and it will return from cache
 ```
