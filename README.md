@@ -1,8 +1,8 @@
 ### Instructions to run
-1. Load the R script file. Replace ```<path``` with the location where the R script is stored on your computer
-```
-source("~/<path>/ProgrammingAssignment2/cachematrix.R")
-```
+1. Load the R script file. Replace ```<path>``` with the location where the R script is stored on your computer
+...```
+...source("~/<path>/cachematrix.R")
+...```
 2. Create a cache of a simple 2x2 matrix
 ```
 cache <- makeCacheMatrix(matrix(1:4,2,2))
