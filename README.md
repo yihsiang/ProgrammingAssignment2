@@ -2,13 +2,13 @@
 Problem referenced from [https://www.mathsisfun.com/algebra/matrix-inverse.html]
 
 #### Problem Statement
-*A group took a trip on a bus, at $3 per child, $3.20 per adult and $2 per senior for a total of $128.40.
+* A group took a trip on a bus, at $3 per child, $3.20 per adult and $2 per senior for a total of $128.40.
 
-*They took a boat ride at $5 per child, $8 per adult and $6 per senior for a total of $286
+* They took a boat ride at $5 per child, $8 per adult and $6 per senior for a total of $286
 
-*They took the train back at $3.50 per child, $3.60 per adult and $3.20 per senior for a total of $151.20.
+* They took the train back at $3.50 per child, $3.60 per adult and $3.20 per senior for a total of $151.20.
 
-*How many children, how many adults, and how many seniors went for the trip?
+* How many children, how many adults, and how many seniors went for the trip?
 
 #### Instructions
 1. Load the R script file. Replace ```<path>``` with the location where the R script is stored on your computer
