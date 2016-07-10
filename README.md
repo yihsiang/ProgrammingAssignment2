@@ -1,46 +1,48 @@
-### Instructions to run
-1. Load the R script file. Replace ```<path>``` with the location where the R script is stored on your computer
-   ```
-   source("~/<path>/cachematrix.R")
-   ```
+### Using Inverse Matrix to solve a problem
+Problem referenced from [https://www.mathsisfun.com/algebra/matrix-inverse.html]
 
-2. Create a cache of a simple 2x2 matrix
-   ```
-   cache <- makeCacheMatrix(matrix(1:4,2,2))
-   ```
+#### Problem Statement
+.A group took a trip on a bus, at $3 per child, $3.20 per adult and $2 per senior for a total of $128.40.
+
+.They took a boat ride at $5 per child, $8 per adult and $6 per senior for a total of $286
+
+.They took the train back at $3.50 per child, $3.60 per adult and $3.20 per senior for a total of $151.20.
+
+.How many children, how many adults, and how many seniors went for the trip?
+
+#### Instructions
+1. Load the R script file. Replace ```<path>``` with the location where the R script is stored on your computer
+    ```
+    source("~/<path>/cachematrix.R")
+    ```
+
+2. Create a 3x3 matrix of the fares and a 1x3 matrix of the total fare
+    ```
+    fare <- makeCacheMatrix(matrix(c(3,3.2,2,3.5,3.6,3.2,5,8,6),3,3,dimnames=list(c("child","adult","senior"),c("bus","train","boat"))))
+    totalFare <- matrix(c(128.40,151.20,286),1,3,dimnames=list(c("total"),c("bus","train","boat")))
+    ```
 
 3. Call cacheSolve to inverse the matrix for the first time
-   ```
-   cacheSolve(cache)
+    ```
+    cacheSolve(fare)
    
-        [,1] [,2]
-   [1,]   -2  1.5
-   [2,]    1 -0.5
-   ```
+          child  adult senior
+    bus    0.50  0.625  -1.25
+    train  0.40 -1.000   1.00
+    boat  -0.38  0.325   0.05
+    ```
 
 4. Call cacheSolve again and it will return from cache
-   ```
-   cacheSolve(cache)
-   Getting Matrix Inverse from Cache
-   
-        [,1] [,2]
-   [1,]   -2  1.5
-   [2,]    1 -0.5
-   ```
+    ```
+    cacheSolve(fare)
+    Getting Matrix Inverse from Cache
+    ```
 
-5. Change the matrix in the cache
-   ```
-   cache$setMatrix(diag(1,2,2))
-   ```
+5. Calculate the number of children, adults and seniors by multplying the totalFare with inverse of fare
+    ```
+    totalFare %*% cacheSolve(fare)
+    ```
 
-6. Call cacheSolve again and it will inverse the matrix
-   ```
-   cacheSolve(cache)
-   
-        [,1] [,2]
-   [1,]    1    0
-   [2,]    0    1
-   ```
 
 ### Introduction
 
